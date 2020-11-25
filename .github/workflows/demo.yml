@@ -10,9 +10,9 @@ jobs:
       - name: Print environment variables exposed by GitHub
         run: |
           echo '$web$REACT_APP_RELATIVE_ROOT'
-          echo "$web$REACT_APP_RELATIVE_ROOT"
+          echo "\$web$REACT_APP_RELATIVE_ROOT"
           echo '$web${REACT_APP_RELATIVE_ROOT}'
-          echo "$web${REACT_APP_RELATIVE_ROOT}" 
+          echo "\$web${REACT_APP_RELATIVE_ROOT}" 
         env:
           REACT_APP_LANG_ID: id
           REACT_APP_RELATIVE_ROOT: /brs-id/
