@@ -12,7 +12,7 @@ jobs:
           echo '$web$REACT_APP_RELATIVE_ROOT'
           echo "$web$REACT_APP_RELATIVE_ROOT"
           echo '$web${REACT_APP_RELATIVE_ROOT}'
-          echo "$web${REACT_APP_RELATIVE_ROOT}"
+          echo "$web${REACT_APP_RELATIVE_ROOT}" 
 
   windows:
     name: Windows Demo
