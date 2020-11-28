@@ -9,7 +9,10 @@ jobs:
     steps:
       - name: Create build version
         id: createbuildversion
-        run: echo "::set-output name=buildversion::$(date +'%y.%m%d').${{ github.run_number }}"
+        run:
+          ::set-output name=buildversion::$(date +'%y.%m%d').${{ github.run_number }}
+          echo "Created version ${{steps.createbuildversion.outputs.buildversion}}"
+
       - name: Print environment variables exposed by GitHub
         run: |
           echo "===> version: ${{steps.createbuildversion.outputs.buildversion}}"
