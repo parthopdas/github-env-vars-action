@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create build version
-        id: create-build-version
-        run: echo "::set-output name=build-version::$(date +'%y.%m%d').${{ github.run_number }}"
+        id: createbuildversion
+        run: echo "::set-output name=buildversion::$(date +'%y.%m%d').${{ github.run_number }}"
       - name: Print environment variables exposed by GitHub
         run: |
-          echo "===> version: ${{steps.date.outputs.build_version}}"
+          echo "===> version: ${{steps.createbuildversion.outputs.buildversion}}"
+          echo "===> env var: $REACT_APP_VERSION"
         env:
           REACT_APP_LANG_ID: id
           REACT_APP_RELATIVE_ROOT: /brs-id/
-          REACT_APP_VERSION: ${{steps.create-build-version.outputs.build-version}}
+          REACT_APP_VERSION: ${{steps.createbuildversion.outputs.buildversion}}
